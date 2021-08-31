@@ -28,9 +28,9 @@ function App() {
 
   const eveFetch = (body) => {
     const myHeader = new Headers();
-    fetch('https://evepraisal.com/appraisal/structured.json', {
+    fetch('http://evepraisal.com/appraisal/structured.json', {
       method: 'POST',
-      mode: 'no-cors',
+      // mode: 'no-cors',
       body: body,
       headers: myHeader,
     })
@@ -57,6 +57,8 @@ function App() {
           </button>
         </form>
       </header>
+      <h2>Contact me: qbekszlachta@gmail.com</h2>
+      <h3>Plz evepraisal, allow me on CORS ;-;</h3>
     </div>
   );
 }
