@@ -56,9 +56,10 @@ function App() {
             Send
           </button>
         </form>
+
+        <h2>Contact me: qbekszlachta@gmail.com</h2>
+        <h3>Plz evepraisal, allow me on CORS ;-;</h3>
       </header>
-      <h2>Contact me: qbekszlachta@gmail.com</h2>
-      <h3>Plz evepraisal, allow me on CORS ;-;</h3>
     </div>
   );
 }
