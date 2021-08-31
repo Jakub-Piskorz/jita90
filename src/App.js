@@ -1,10 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
 
 function App() {
-  const [eveResponse, setEveResponse] = useState('test response');
-
   const createJsonText = (items) => {
     const _items = items.map((line) => {
       return {
@@ -46,7 +42,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Evepraisal, but 90% Jita buy price.</h1>
-        <h2>{eveResponse}</h2>
         <form id="request">
           <textarea />
           <button
