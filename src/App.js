@@ -30,7 +30,7 @@ function App() {
     const myHeader = new Headers();
     fetch('https://evepraisal.com/appraisal/structured.json', {
       method: 'POST',
-      mode: 'cors',
+      mode: 'no-cors',
       body: body,
       headers: myHeader,
     })
