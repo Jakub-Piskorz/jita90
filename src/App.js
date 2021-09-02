@@ -27,21 +27,21 @@ function App() {
   };
 
   const eveFetch = (body) => {
-    const myHeader = new Headers();
+    const myHeader = new Headers({ 'User-Agent': '90jita' });
+
     fetch('http://evepraisal.com/appraisal/structured.json', {
       method: 'POST',
-      // mode: 'no-cors',
+      mode: 'no-cors',
       body: body,
       headers: myHeader,
     })
       .then((res) => (res.ok ? (res) => res.json() : console.error(res)))
       .catch((err) => console.error(err));
-    // .then((data) => console.log(data));
   };
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Evepraisal, but 90% Jita buy price.</h1>
+        <h1>90% Jita buy price.</h1>
         <form id="request">
           <textarea />
           <button
@@ -58,7 +58,7 @@ function App() {
         </form>
 
         <h2>Contact me: qbekszlachta@gmail.com</h2>
-        <h3>Plz evepraisal, allow me on CORS ;-;</h3>
+        <h3>Plz allow me on CORS ;-;</h3>
       </header>
     </div>
   );
