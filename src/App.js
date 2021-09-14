@@ -1,6 +1,21 @@
 import './App.css';
+import { createStore } from 'redux';
 
 function App() {
+  const testReducer = (state = 'init text', action) => {
+    switch (action.type) {
+      case 'noob': {
+        return 'noob text';
+      }
+      case 'pro': {
+        return 'true noble';
+      }
+      default:
+        return state;
+    }
+  };
+  let store = createStore(testReducer);
+
   const createJsonText = (items) => {
     const _items = items.map((line) => {
       return {
@@ -42,8 +57,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>90% Jita buy price.</h1>
+        <p>{store.getState()}</p>
         <form id="request">
           <textarea />
+          <button onClick={store.dispatch({ type: 'noob' })} value="noob" />
+          <button onClick={store.dispatch({ type: 'pro' })} value="pro" />
           <button
             onClick={(e) => {
               e.preventDefault();
