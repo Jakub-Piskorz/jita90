@@ -1,9 +1,9 @@
 import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { invite, pwn, teamfight } from './features/noob/noobSlice'
+import { invite, pwn, selectNoob } from './features/noob/noobSlice'
 
 function App() {
-  const noobs = useSelector((state) => state.noob.value)
+  const noobs = useSelector(selectNoob)
   const dispatch = useDispatch()
 
   const createJsonText = (items) => {
@@ -50,8 +50,8 @@ function App() {
         <p>{noobs}</p>
         <form id="request">
           <textarea />
-          <button onClick={() => dispatch(pwn())} value="noob" />
-          <button onClick={() => dispatch(invite())} value="pro" />
+          <button onClick={() => dispatch(pwn())}>-1</button>
+          <button onClick={() => dispatch(invite())}>+1</button>
           <button
             onClick={(e) => {
               e.preventDefault()

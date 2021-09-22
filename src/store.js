@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import noobReducer from './features/noob/noobSlice'
+import noobSlice from './features/noob/noobSlice'
 
 export default configureStore({
   reducer: {
-    noob: noobReducer,
+    noob: noobSlice,
   },
 })
