@@ -1,11 +1,7 @@
 import './App.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { invite, pwn, selectNoob } from './features/noob/noobSlice'
+import Noob from './features/noob/noob'
 
 function App() {
-  const noobs = useSelector(selectNoob)
-  const dispatch = useDispatch()
-
   const createJsonText = (items) => {
     const _items = items.map((line) => {
       return {
@@ -47,11 +43,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>90% Jita buy price.</h1>
-        <p>{noobs}</p>
+
         <form id="request">
           <textarea />
-          <button onClick={() => dispatch(pwn())}>-1</button>
-          <button onClick={() => dispatch(invite())}>+1</button>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -64,6 +58,7 @@ function App() {
             Send
           </button>
         </form>
+        <Noob />
         <h2>Contact me: qbekszlachta@gmail.com</h2>
       </header>
     </div>

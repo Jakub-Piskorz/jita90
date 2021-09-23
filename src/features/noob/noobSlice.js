@@ -6,18 +6,18 @@ export const slice = createSlice({
     value: 0,
   },
   reducers: {
-    invite: (state) => {
+    plusOne: (state) => {
       state.value += 1
     },
-    pwn: (state) => {
+    minusOne: (state) => {
       state.value -= 1
     },
-    teamfight: (state, action) => {
+    plus: (state, action) => {
       state.value += action.payload
     },
   },
 })
 
-export const { invite, pwn, teamfight } = slice.actions
+export const { plusOne, minusOne, plus } = slice.actions
 export default slice.reducer
 export const selectNoob = (state) => state.noob.value
