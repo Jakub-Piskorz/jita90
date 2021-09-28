@@ -1,5 +1,5 @@
 import './App.css'
-import Noob from './features/noob/noob'
+import Noob from './redux/noob/Noob'
 
 function App() {
   const createJsonText = (items) => {
