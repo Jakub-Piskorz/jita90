@@ -5,7 +5,6 @@
 /netlify
 /.pnp
 .pnp.js
-
 # testing
 /coverage
 
@@ -25,4 +24,5 @@ yarn-error.log*
 netlify.toml
 # Local Netlify folder
 .netlify
+.env
 

@@ -40,11 +40,12 @@ function App() {
       headers: myHeader,
     })
       .then((res) => (res.ok ? (res) => res.json() : console.error(res)))
+      .then((data) => console.log(data))
       .catch((err) => console.error(err));
   };
 
   const klikHandle = async (e) => {
-    const response = await fetch('/.netlify/functions/func', {
+    const response = await fetch('/.netlify/functions/fetch-weather', {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -65,7 +66,7 @@ function App() {
       <header className="App-header">
         <h1>90% Jita buy price.</h1>
         <form id="request">
-          <textarea />
+          <textarea value={input} onChange={(e) => setInput(e.target.value)} />
           <button onClick={eveFetch}>Send</button>
         </form>
 
