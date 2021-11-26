@@ -1,6 +1,10 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('init output');
+
   const createJsonText = (items) => {
     const _items = items.map((line) => {
       return {
@@ -38,23 +42,31 @@ function App() {
       .then((res) => (res.ok ? (res) => res.json() : console.error(res)))
       .catch((err) => console.error(err));
   };
+
+  const klikHandle = async (e) => {
+    const response = await fetch('/.netlify/functions/func', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+
+    // setOutput(response);
+  };
+
   return (
     <div className="App">
+      <main style={{ marginBottom: '100px' }}>
+        <h2>{output}</h2>
+        <button onClick={klikHandle}>Test fetch</button>
+      </main>
       <header className="App-header">
         <h1>90% Jita buy price.</h1>
         <form id="request">
           <textarea />
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              const request = handleText(
-                document.querySelector('textarea').value
-              );
-              eveFetch(request);
-            }}
-          >
-            Send
-          </button>
+          <button onClick={eveFetch}>Send</button>
         </form>
 
         <h2>Contact me: qbekszlachta@gmail.com</h2>
