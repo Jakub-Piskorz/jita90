@@ -24,4 +24,4 @@ yarn-error.log*
 netlify.toml
 # Local Netlify folder
 .netlify
-netlify
+/netlify
