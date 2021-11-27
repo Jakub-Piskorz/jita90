@@ -1,5 +1,3 @@
 [build]
   functions = "functions/"
-  directory = "public/"
-  publish = "public/"
-  command = "ntl build"
+  command = "npm run build"
