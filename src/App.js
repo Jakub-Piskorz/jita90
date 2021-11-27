@@ -45,12 +45,7 @@ function App() {
   };
 
   const klikHandle = async (e) => {
-    const response = await fetch('/.netlify/functions/fetch-weather', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
+    const response = await fetch('/.netlify/functions/api');
     const data = await response.json();
     console.log(data);
 
