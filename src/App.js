@@ -18,6 +18,30 @@ function App() {
     return JSON.stringify(jsonObject);
   };
 
+  /* 
+  
+  Before:
+
+     "Veldspar 5
+     6 Moa
+     Warrior I 3"
+
+  After:
+
+     "{
+        'market_name': 'jita',
+        'items': [
+          {'name': 'Veldspar', 'quantity': 5},
+          {'name': 'Moa', 'quantity': 6},
+          {'name': 'Warrior I', 'quantity': 3},
+        ]
+      }"
+
+  Don't even bother to understand how 'inputTextToFetchBodyJson' does that.
+  I hate regex.
+
+  */
+
   const inputTextToFetchBodyJson = (text) => {
     const _1 = text;
     const _2 = _1.split(/\n/);
