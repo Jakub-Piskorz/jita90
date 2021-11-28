@@ -62,30 +62,33 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>90% Jita buy price.</h1>
-        <form id="request">
-          <textarea value={input} onChange={(e) => setInput(e.target.value)} />
-          <button onClick={fetchAppraisal}>Get Price</button>
-          {output && (
-            <>
-              <div className="price">
-                Total Jita buy price: <strong>{Math.floor(output)}</strong> ISK
-              </div>
-              <div className="price">
-                Total 90% Jita buy price:{' '}
-                <strong>{Math.floor(0.9 * output)}</strong> ISK
-              </div>
-            </>
-          )}
-          {error && (
-            <div className="error">
-              Invalid text. Try writing: <strong>Veldspar 5</strong> and press
-              the button again.
+      <h1>90% Jita buy price.</h1>
+      <form id="request">
+        <textarea value={input} onChange={(e) => setInput(e.target.value)} />
+        <button onClick={fetchAppraisal}>Get Price</button>
+        {output && (
+          <>
+            <div className="price">
+              Total Jita buy price: <strong>{Math.floor(output)}</strong> ISK
             </div>
-          )}
-        </form>
-      </header>
+            <div className="price">
+              Total 90% Jita buy price:{' '}
+              <strong>{Math.floor(0.9 * output)}</strong> ISK
+            </div>
+          </>
+        )}
+        {error && (
+          <div className="error">
+            Invalid text. Try writing: <strong>Veldspar 5</strong> and press the
+            button again.
+          </div>
+        )}
+      </form>
+      <footer>
+        Created by{' '}
+        <a href="https://evewho.com/character/2113609274">Asian Trap</a> using{' '}
+        <a href="https://evepraisal.com/api-docs">Evepraisal API</a>
+      </footer>
     </div>
   );
 }

@@ -1,6 +1,16 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 .price {
   margin-top: 15px;
   font-size: 20px;
@@ -27,6 +37,8 @@ textarea {
   height: 300px;
   width: 400px;
   padding: 20px;
+  max-width: 90%;
+  max-height: 50vh;
 }
 #request button {
   all: unset;
@@ -42,6 +54,19 @@ textarea {
 }
 #request button:hover {
   background-color: #e1e1e1;
+}
+footer {
+  font-size: 15px;
+  margin-top: 20vh;
+}
+footer a {
+  all: unset;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+footer a:hover {
+  color: #e0c4ff;
 }
 
 /* ============ AUTO-GENERATED CSS BELOW ============ */
@@ -59,17 +84,6 @@ textarea {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
