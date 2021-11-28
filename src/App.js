@@ -22,13 +22,28 @@ function App() {
     const _1 = text;
     const _2 = _1.split(/\n/);
     const _3 = _2.map((line) => line.replace(/\t$/, ''));
-    const _4 = _3.map((line) => line.split(/\s/));
+    const _4 = _3.map((line) => {
+      const startsByNumber = /^\d+\s/.exec(line);
+      let updatedLine = '';
+      if (startsByNumber !== null) {
+        // Example: "33 Warrior I" replaces with "Warrior I 33"
+        updatedLine =
+          line.replace(/^\d+\s/.exec(line)[0], '') +
+          ' ' +
+          /^\d+\s/.exec(line)[0].replace(/\s$/, '');
+      } else {
+        updatedLine = line;
+      }
+      const newLine = updatedLine.split(/\s(?=\d+$)/);
+      return newLine;
+    });
     const _5 = _4.filter((line) => {
       if (line.length === 2) return true;
       if (line.length === 1) return isNaN(line[0]);
       return false;
     });
     const _6 = _5.map((line) => {
+      if (line.length === 1) return line;
       return isNaN(Number(line[1])) ? [line[1], line[0]] : line;
     });
     const jsonText = objectToFetchBodyJson(_6);
@@ -43,8 +58,6 @@ function App() {
       const itemsAreGood =
         response.data.appraisal.items.find((item) => item.typeName === '') ===
         undefined;
-      console.log(response.status);
-      console.log(response.data);
       if (response.status === 200 && itemsAreGood) {
         const buyPrice = await response.data.appraisal.totals.buy;
         setOutput(buyPrice);
@@ -65,7 +78,9 @@ function App() {
       <h1>90% Jita buy price.</h1>
       <form id="request">
         <textarea value={input} onChange={(e) => setInput(e.target.value)} />
-        <button onClick={fetchAppraisal}>Get Price</button>
+        <button className="button" onClick={fetchAppraisal}>
+          Get Price
+        </button>
         {output && (
           <>
             <div className="price">

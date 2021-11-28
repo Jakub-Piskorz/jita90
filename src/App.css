@@ -40,7 +40,7 @@ textarea {
   max-width: 90%;
   max-height: 50vh;
 }
-#request button {
+.button {
   all: unset;
   background-color: white;
   border-radius: 8px;
@@ -52,7 +52,7 @@ textarea {
   margin-top: 25px;
   transition: background-color 0.1s;
 }
-#request button:hover {
+.button:hover {
   background-color: #e1e1e1;
 }
 footer {
