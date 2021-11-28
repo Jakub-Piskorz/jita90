@@ -1,3 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+.price {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.error {
+  background-color: #790000;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+#request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+textarea {
+  border-radius: 8px;
+  font-size: 16px;
+  height: 300px;
+  width: 400px;
+  padding: 20px;
+}
+#request button {
+  all: unset;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 25px;
+  transition: background-color 0.1s;
+}
+#request button:hover {
+  background-color: #e1e1e1;
+}
+
+/* ============ AUTO-GENERATED CSS BELOW ============ */
+
 .App {
   text-align: center;
 }
